@@ -48,6 +48,7 @@
     padding: 40px 24px;
   }
 
+  /* Header */
   .header {
     text-align: center;
     margin-bottom: 48px;
@@ -88,19 +89,7 @@
     font-weight: 300;
   }
 
-  .diff-badge {
-    display: inline-block;
-    font-size: 11px;
-    padding: 1px 7px;
-    border-radius: 10px;
-    font-weight: 600;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-  .diff-up { background: rgba(78,205,196,0.18); color: #4ecdc4; }
-  .diff-new { background: rgba(155,109,255,0.18); color: #c4a0ff; }
-  .diff-ended { background: rgba(255,107,107,0.18); color: #ff8a8a; }
-
+  /* Summary Cards */
   .summary-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -115,7 +104,10 @@
     text-align: center;
     transition: transform 0.2s, border-color 0.2s;
   }
-  .summary-card:hover { transform: translateY(-2px); border-color: var(--border-accent); }
+  .summary-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-accent);
+  }
   .summary-card .label {
     font-size: 11px;
     color: var(--text-muted);
@@ -131,8 +123,13 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .summary-card .unit { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+  .summary-card .unit {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
 
+  /* Event Section */
   .event-section {
     margin-bottom: 56px;
     background: var(--bg-secondary);
@@ -149,24 +146,49 @@
     flex-wrap: wrap;
     gap: 12px;
   }
-  .event-header h2 { font-size: 20px; font-weight: 600; color: var(--text-primary); }
-  .event-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .event-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .event-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
   .event-badge {
     font-size: 12px;
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 500;
   }
-  .badge-date { background: rgba(78,140,255,0.15); color: var(--accent-blue); border: 1px solid rgba(78,140,255,0.3); }
-  .badge-venue { background: rgba(155,109,255,0.15); color: var(--accent-purple); border: 1px solid rgba(155,109,255,0.3); }
-  .badge-soldout { background: rgba(255,107,107,0.15); color: var(--accent-red); border: 1px solid rgba(255,107,107,0.3); }
-  .badge-onsale { background: rgba(78,205,196,0.15); color: var(--accent-green); border: 1px solid rgba(78,205,196,0.3); }
-  .badge-exceed { background: rgba(255,217,61,0.15); color: var(--accent-yellow); border: 1px solid rgba(255,217,61,0.3); }
-  .badge-ended { background: rgba(96,96,128,0.2); color: #9090b0; border: 1px solid rgba(96,96,128,0.4); }
-  .badge-new { background: rgba(155,109,255,0.2); color: #c4a0ff; border: 1px solid rgba(155,109,255,0.4); animation: pulse 2s ease-in-out infinite; }
-  .badge-today { background: rgba(255,107,157,0.2); color: #ff6b9d; border: 1px solid rgba(255,107,157,0.4); animation: pulse 1.5s ease-in-out infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+  .badge-date {
+    background: rgba(78,140,255,0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(78,140,255,0.3);
+  }
+  .badge-venue {
+    background: rgba(155,109,255,0.15);
+    color: var(--accent-purple);
+    border: 1px solid rgba(155,109,255,0.3);
+  }
+  .badge-soldout {
+    background: rgba(255,107,107,0.15);
+    color: var(--accent-red);
+    border: 1px solid rgba(255,107,107,0.3);
+  }
+  .badge-onsale {
+    background: rgba(78,205,196,0.15);
+    color: var(--accent-green);
+    border: 1px solid rgba(78,205,196,0.3);
+  }
+  .badge-exceed {
+    background: rgba(255,217,61,0.15);
+    color: var(--accent-yellow);
+    border: 1px solid rgba(255,217,61,0.3);
+  }
 
+  /* Target summary bar */
   .target-summary {
     display: flex;
     align-items: center;
@@ -177,77 +199,205 @@
     margin-bottom: 24px;
     border: 1px solid var(--border);
   }
-  .target-summary .ts-label { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
-  .target-summary .ts-bar { flex: 1; height: 10px; background: var(--bg-primary); border-radius: 5px; overflow: hidden; }
-  .target-summary .ts-fill { height: 100%; border-radius: 5px; transition: width 0.6s; }
-  .target-summary .ts-text { font-size: 18px; font-weight: 700; color: var(--text-primary); white-space: nowrap; }
-  .target-summary .ts-detail { font-size: 11px; color: var(--text-secondary); white-space: nowrap; }
+  .target-summary .ts-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .target-summary .ts-bar {
+    flex: 1;
+    height: 10px;
+    background: var(--bg-primary);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  .target-summary .ts-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.6s;
+  }
+  .target-summary .ts-marker {
+    position: absolute;
+    top: -4px;
+    height: 18px;
+    width: 2px;
+    background: var(--text-primary);
+    border-radius: 1px;
+  }
+  .target-summary .ts-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+  .target-summary .ts-detail {
+    font-size: 11px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
 
-  .event-body { padding: 32px; }
+  .event-body {
+    padding: 32px;
+  }
 
-  .ticket-table-wrap { overflow-x: auto; margin-bottom: 24px; }
-  .ticket-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  /* Ticket Table */
+  .ticket-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 24px;
+  }
+  .ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
   .ticket-table thead th {
-    background: var(--bg-card); padding: 12px 14px; text-align: left;
-    font-weight: 500; color: var(--text-secondary); font-size: 11px;
-    text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); white-space: nowrap;
+    background: var(--bg-card);
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
   }
   .ticket-table tbody td {
-    padding: 12px 14px; border-bottom: 1px solid rgba(42,42,64,0.5);
-    color: var(--text-primary); white-space: nowrap;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(42,42,64,0.5);
+    color: var(--text-primary);
+    white-space: nowrap;
   }
-  .ticket-table tbody tr:hover { background: rgba(78,140,255,0.04); }
-  .ticket-type { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 500; margin-left: 8px; }
-  .type-lottery { background: rgba(255,159,67,0.15); color: var(--accent-orange); }
-  .type-general { background: rgba(78,205,196,0.15); color: var(--accent-green); }
-  .type-fc { background: rgba(155,109,255,0.15); color: var(--accent-purple); }
+  .ticket-table tbody tr:hover {
+    background: rgba(78,140,255,0.04);
+  }
+  .ticket-type {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  .type-lottery {
+    background: rgba(255,159,67,0.15);
+    color: var(--accent-orange);
+  }
+  .type-general {
+    background: rgba(78,205,196,0.15);
+    color: var(--accent-green);
+  }
+  .type-fc {
+    background: rgba(155,109,255,0.15);
+    color: var(--accent-purple);
+  }
 
+  /* Lottery Info */
   .lottery-info {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px 24px; margin-bottom: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
   }
-  .lottery-info h4 { font-size: 13px; color: var(--accent-orange); margin-bottom: 12px; font-weight: 600; }
-  .lottery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
-  .lottery-item { text-align: center; padding: 12px; background: rgba(255,159,67,0.05); border-radius: 8px; }
-  .lottery-item .li-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-  .lottery-item .li-value { font-size: 22px; font-weight: 700; color: var(--accent-orange); margin-top: 2px; }
-  .lottery-item .li-sub { font-size: 11px; color: var(--text-secondary); }
-
-  .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
-  @media (max-width: 768px) { .chart-row { grid-template-columns: 1fr; } }
-  .chart-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
-  .chart-card h4 { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; font-weight: 500; }
-  .chart-container { position: relative; height: 220px; }
-
-  .progress-wrap { display: flex; align-items: center; gap: 8px; }
-  .progress-bar { flex: 1; height: 6px; background: var(--bg-primary); border-radius: 3px; overflow: hidden; min-width: 60px; }
-  .progress-fill { height: 100%; border-radius: 3px; }
-  .progress-text { font-size: 12px; color: var(--text-secondary); min-width: 40px; text-align: right; }
-  .progress-text.exceed { color: var(--accent-yellow); font-weight: 600; }
-
-  .info-box {
-    padding: 12px 24px; background: var(--bg-card); border-radius: 12px;
-    margin-bottom: 24px; border: 1px solid var(--border);
-    font-size: 13px; color: var(--text-secondary);
+  .lottery-info h4 {
+    font-size: 13px;
+    color: var(--accent-orange);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .lottery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+  }
+  .lottery-item {
+    text-align: center;
+    padding: 12px;
+    background: rgba(255,159,67,0.05);
+    border-radius: 8px;
+  }
+  .lottery-item .li-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .lottery-item .li-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-orange);
+    margin-top: 2px;
+  }
+  .lottery-item .li-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
   }
 
-  .analysis-section {
-    margin-bottom: 56px; background: var(--bg-secondary);
-    border-radius: 24px; border: 1px solid var(--border); overflow: hidden;
+  /* Charts */
+  .chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
   }
-  .analysis-header { padding: 28px 32px; border-bottom: 1px solid var(--border); }
-  .analysis-header h2 { font-size: 20px; font-weight: 600; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .analysis-body { padding: 32px; }
-  .analysis-block { margin-bottom: 28px; padding: 24px; background: var(--bg-card); border-radius: 12px; border-left: 3px solid; }
-  .analysis-block h3 { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
-  .analysis-block p { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
-  .ab-overview { border-left-color: var(--accent-blue); }  .ab-overview h3 { color: var(--accent-blue); }
-  .ab-highlight { border-left-color: var(--accent-green); } .ab-highlight h3 { color: var(--accent-green); }
-  .ab-concern { border-left-color: var(--accent-orange); }  .ab-concern h3 { color: var(--accent-orange); }
-  .ab-action { border-left-color: var(--accent-purple); }   .ab-action h3 { color: var(--accent-purple); }
-  .ab-diff { border-left-color: var(--accent-pink); }       .ab-diff h3 { color: var(--accent-pink); }
+  @media (max-width: 768px) {
+    .chart-row { grid-template-columns: 1fr; }
+  }
+  .chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .chart-card h4 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .chart-container {
+    position: relative;
+    height: 220px;
+  }
 
-  .footer { text-align: center; padding: 32px; color: var(--text-muted); font-size: 12px; }
+  /* Progress bar */
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .progress-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--bg-primary);
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 60px;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+  .progress-text {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 40px;
+    text-align: right;
+  }
+  .progress-text.exceed {
+    color: var(--accent-yellow);
+    font-weight: 600;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-muted);
+    font-size: 12px;
+  }
 
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg-primary); }
@@ -257,43 +407,44 @@
 <body>
 <div class="container">
 
+  <!-- Header -->
   <div class="header">
     <div class="header-label">ZAIKO Creator Dashboard</div>
     <h1>UnknownRecords Sales Report</h1>
-    <div class="subtitle">集計期間: 2026/02/18 - 2026/04/10 | レポート生成日: 2026/04/10 | 前回レポート: 2026/04/02</div>
+    <div class="subtitle">集計期間: 2026/02/18 - 2026/03/27 | レポート生成日: 2026/03/27</div>
   </div>
 
   <!-- Summary Cards -->
   <div class="summary-grid">
     <div class="summary-card">
       <div class="label">対象イベント</div>
-      <div class="value">7</div>
-      <div class="unit">events <span class="diff-badge diff-new">+1 NEW</span></div>
+      <div class="value">5</div>
+      <div class="unit">events</div>
     </div>
     <div class="summary-card">
       <div class="label">総販売枚数</div>
-      <div class="value">292</div>
-      <div class="unit"><span class="diff-badge diff-up">+51</span> 前回 241枚</div>
+      <div class="value">181</div>
+      <div class="unit">/ 目標 792枚</div>
     </div>
     <div class="summary-card">
-      <div class="label">総売上</div>
-      <div class="value">&yen;2.9M</div>
-      <div class="unit">約 &yen;2,895,500</div>
+      <div class="label">総閲覧数</div>
+      <div class="value">2,811</div>
+      <div class="unit">page views</div>
     </div>
     <div class="summary-card">
       <div class="label">総抽選申込</div>
-      <div class="value">199</div>
-      <div class="unit">枚（3イベント合計）</div>
+      <div class="value">219</div>
+      <div class="unit">枚</div>
     </div>
     <div class="summary-card">
       <div class="label">目標達成率</div>
-      <div class="value">33.5%</div>
-      <div class="unit"><span class="diff-badge diff-up">+5.1pt</span> 前回 28.4%</div>
+      <div class="value">22.9%</div>
+      <div class="unit">overall</div>
     </div>
     <div class="summary-card">
       <div class="label">目標達成</div>
-      <div class="value">3</div>
-      <div class="unit">/ 7 events <span class="diff-badge diff-up">+2</span></div>
+      <div class="value">1</div>
+      <div class="unit">/ 5 events</div>
     </div>
   </div>
 
@@ -306,43 +457,95 @@
       <div class="event-meta">
         <span class="event-badge badge-date">2026/3/28</span>
         <span class="event-badge badge-venue">IKEBUKURO FIELD</span>
-        <span class="event-badge badge-ended">販売終了</span>
+        <span class="event-badge badge-onsale">販売中</span>
       </div>
     </div>
     <div class="event-body">
+
+      <!-- Target Summary -->
       <div class="target-summary">
         <div class="ts-label">販売目標達成率</div>
         <div class="ts-bar">
-          <div class="ts-fill" style="width:92.5%;background:var(--gradient-3)"></div>
+          <div class="ts-fill" style="width:85%;background:var(--gradient-3)"></div>
         </div>
-        <div class="ts-text">37 / 40</div>
-        <div class="ts-detail">92.5%</div>
+        <div class="ts-text">34 / 40</div>
+        <div class="ts-detail">85.0%</div>
       </div>
+
       <div class="ticket-table-wrap">
         <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>抽選登録期間</th><th>販売期間</th><th>販売数</th><th>目標</th><th>達成率</th></tr></thead>
+          <thead>
+            <tr>
+              <th>チケット名</th>
+              <th>種別</th>
+              <th>抽選登録期間</th>
+              <th>販売期間</th>
+              <th>販売数</th>
+              <th>目標</th>
+              <th>達成率</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td>最速先行予約</td><td><span class="ticket-type type-lottery">抽選</span></td><td>2/18 - 3/1</td><td>3/2 - 3/8</td><td>26枚 (入金済)</td>
+              <td>最速先行予約</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>2/18 - 3/1</td>
+              <td>3/2 - 3/8</td>
+              <td>26枚 (入金済)</td>
               <td rowspan="2" style="vertical-align:middle;text-align:center;font-weight:600;">40</td>
-              <td rowspan="2" style="vertical-align:middle;"><div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" style="width:92.5%;background:var(--gradient-3)"></div></div><span class="progress-text">92.5%</span></div></td>
+              <td rowspan="2" style="vertical-align:middle;">
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:85%;background:var(--gradient-3)"></div></div>
+                  <span class="progress-text">85%</span>
+                </div>
+              </td>
             </tr>
-            <tr><td>一般販売</td><td><span class="ticket-type type-general">一般</span></td><td>-</td><td>3/11 - 3/28</td><td>11枚</td></tr>
+            <tr>
+              <td>一般販売</td>
+              <td><span class="ticket-type type-general">一般</span></td>
+              <td>-</td>
+              <td>3/11 - 3/28</td>
+              <td>8枚</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
       <div class="lottery-info">
         <h4>&#x1F3B2; 抽選チケット集計（最速先行予約）</h4>
         <div class="lottery-grid">
-          <div class="lottery-item"><div class="li-label">申込人数</div><div class="li-value">29</div><div class="li-sub">人</div></div>
-          <div class="lottery-item"><div class="li-label">申込枚数</div><div class="li-value">31</div><div class="li-sub">枚</div></div>
-          <div class="lottery-item"><div class="li-label">当選</div><div class="li-value">29</div><div class="li-sub">人 / 31枚</div></div>
-          <div class="lottery-item"><div class="li-label">入金済</div><div class="li-value">26</div><div class="li-sub">枚（入金率 83.9%）</div></div>
+          <div class="lottery-item">
+            <div class="li-label">申込人数</div>
+            <div class="li-value">29</div>
+            <div class="li-sub">人</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">申込枚数</div>
+            <div class="li-value">31</div>
+            <div class="li-sub">枚</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">当選</div>
+            <div class="li-value">29</div>
+            <div class="li-sub">人 / 31枚</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">入金済</div>
+            <div class="li-value">26</div>
+            <div class="li-sub">枚（入金率 83.9%）</div>
+          </div>
         </div>
       </div>
+
       <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-1"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-1"></canvas></div></div>
+        <div class="chart-card">
+          <h4>日別販売数推移</h4>
+          <div class="chart-container"><canvas id="chart-sales-1"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>日別閲覧数推移</h4>
+          <div class="chart-container"><canvas id="chart-views-1"></canvas></div>
+        </div>
       </div>
     </div>
   </div>
@@ -361,266 +564,483 @@
       </div>
     </div>
     <div class="event-body">
+
       <div class="target-summary">
         <div class="ts-label">販売目標達成率</div>
-        <div class="ts-bar"><div class="ts-fill" style="width:100%;background:var(--gradient-exceed)"></div></div>
+        <div class="ts-bar">
+          <div class="ts-fill" style="width:100%;background:var(--gradient-exceed)"></div>
+        </div>
         <div class="ts-text">36 / 32</div>
         <div class="ts-detail" style="color:var(--accent-yellow);font-weight:600;">112.5%</div>
       </div>
+
       <div class="ticket-table-wrap">
         <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>販売期間</th><th>価格</th><th>販売数 / 枠</th><th>目標</th><th>達成率</th></tr></thead>
+          <thead>
+            <tr>
+              <th>チケット名</th>
+              <th>種別</th>
+              <th>抽選登録期間</th>
+              <th>販売期間</th>
+              <th>価格</th>
+              <th>販売数 / 枠</th>
+              <th>目標</th>
+              <th>達成率</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td>ファンクラブ専用</td><td><span class="ticket-type type-fc">FC</span></td><td>3/11 - 4/3</td><td>&yen;4,000</td><td>20 / 20</td>
+              <td>ファンクラブ専用</td>
+              <td><span class="ticket-type type-fc">FC</span></td>
+              <td>-</td>
+              <td>3/11 - 4/3</td>
+              <td>&yen;4,000</td>
+              <td>20 / 20</td>
               <td rowspan="2" style="vertical-align:middle;text-align:center;font-weight:600;">32</td>
-              <td rowspan="2" style="vertical-align:middle;"><div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--gradient-exceed)"></div></div><span class="progress-text exceed">112.5%</span></div></td>
+              <td rowspan="2" style="vertical-align:middle;">
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--gradient-exceed)"></div></div>
+                  <span class="progress-text exceed">112%</span>
+                </div>
+              </td>
             </tr>
-            <tr><td>一般販売</td><td><span class="ticket-type type-general">一般</span></td><td>3/11 - 4/3</td><td>&yen;4,000</td><td>16 / 16</td></tr>
+            <tr>
+              <td>一般販売</td>
+              <td><span class="ticket-type type-general">一般</span></td>
+              <td>-</td>
+              <td>3/11 - 4/3</td>
+              <td>&yen;5,000</td>
+              <td>16 / 16</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
       <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-2"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-2"></canvas></div></div>
+        <div class="chart-card">
+          <h4>日別販売数推移</h4>
+          <div class="chart-container"><canvas id="chart-sales-2"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>日別閲覧数推移</h4>
+          <div class="chart-container"><canvas id="chart-views-2"></canvas></div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ============================================ -->
-  <!-- Event 3: SCARLET LUMiNOUS (本日開催!) -->
+  <!-- Event 3: SCARLET LUMiNOUS -->
   <!-- ============================================ -->
-  <div class="event-section" id="event3" style="border-color: rgba(255,107,157,0.4);">
+  <div class="event-section" id="event3">
     <div class="event-header">
-      <h2>SCARLET LUMiNOUS <span class="diff-badge diff-up">+16枚</span></h2>
+      <h2>KASUMi 1ST ONE MAN LiVE SCARLET LUMiNOUS</h2>
       <div class="event-meta">
-        <span class="event-badge badge-today">本日開催!</span>
         <span class="event-badge badge-date">2026/4/10</span>
         <span class="event-badge badge-venue">綾瀬Esmeralda</span>
-        <span class="event-badge badge-exceed">目標超過</span>
+        <span class="event-badge badge-onsale">販売中</span>
       </div>
     </div>
     <div class="event-body">
+
       <div class="target-summary">
         <div class="ts-label">販売目標達成率</div>
-        <div class="ts-bar"><div class="ts-fill" style="width:100%;background:var(--gradient-exceed)"></div></div>
-        <div class="ts-text">26 / 20</div>
-        <div class="ts-detail" style="color:var(--accent-yellow);font-weight:600;">130.0% <span class="diff-badge diff-up">+80pt!</span></div>
+        <div class="ts-bar">
+          <div class="ts-fill" style="width:50%;background:var(--gradient-1)"></div>
+        </div>
+        <div class="ts-text">10 / 20</div>
+        <div class="ts-detail">50.0%</div>
       </div>
+
       <div class="ticket-table-wrap">
         <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>販売期間</th><th>価格</th><th>販売数 / 枠</th><th>目標</th><th>達成率</th></tr></thead>
+          <thead>
+            <tr>
+              <th>チケット名</th>
+              <th>種別</th>
+              <th>抽選登録期間</th>
+              <th>販売期間</th>
+              <th>価格</th>
+              <th>販売数 / 枠</th>
+              <th>目標</th>
+              <th>達成率</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td>一般販売</td><td><span class="ticket-type type-general">一般</span></td><td>3/19 - 4/10</td><td>&yen;4,000</td><td>16 / 30 <span class="diff-badge diff-up">+12</span></td>
+              <td>一般販売</td>
+              <td><span class="ticket-type type-general">一般</span></td>
+              <td>-</td>
+              <td>3/19 - 4/10</td>
+              <td>&yen;4,000</td>
+              <td>6 / 30</td>
               <td rowspan="2" style="vertical-align:middle;text-align:center;font-weight:600;">20</td>
-              <td rowspan="2" style="vertical-align:middle;"><div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--gradient-exceed)"></div></div><span class="progress-text exceed">130%</span></div></td>
+              <td rowspan="2" style="vertical-align:middle;">
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:50%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">50%</span>
+                </div>
+              </td>
             </tr>
-            <tr><td>FC限定</td><td><span class="ticket-type type-fc">FC</span></td><td>3/19 - 4/10</td><td>&yen;3,000</td><td>10 / 15 <span class="diff-badge diff-up">+4</span></td></tr>
+            <tr>
+              <td>FC限定</td>
+              <td><span class="ticket-type type-fc">FC</span></td>
+              <td>-</td>
+              <td>3/19 - 4/10</td>
+              <td>&yen;3,000</td>
+              <td>4 / 15</td>
+            </tr>
           </tbody>
         </table>
       </div>
-      <div class="info-box">
-        売上: <strong style="color:var(--accent-green);">&yen;98,000</strong> | 前回10枚→26枚（+160%!）目標を大幅クリア。本日のイベントを残り枠19枚で迎える
-      </div>
+
       <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-3"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-3"></canvas></div></div>
+        <div class="chart-card">
+          <h4>日別販売数推移</h4>
+          <div class="chart-container"><canvas id="chart-sales-3"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>日別閲覧数推移</h4>
+          <div class="chart-container"><canvas id="chart-views-3"></canvas></div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ============================================ -->
-  <!-- Event 4: EZ GAME -->
+  <!-- Event 4: Re:Flection -->
   <!-- ============================================ -->
   <div class="event-section" id="event4">
     <div class="event-header">
-      <h2>EZ GAME <span class="diff-badge diff-up">+4枚</span></h2>
+      <h2>LiveRevolt Originals 4th Live「Re:Flection」</h2>
       <div class="event-meta">
-        <span class="event-badge badge-date">2026/4/25</span>
-        <span class="event-badge badge-venue">池袋フィールド</span>
-        <span class="event-badge badge-onsale">販売中</span>
-      </div>
-    </div>
-    <div class="event-body">
-      <div class="target-summary">
-        <div class="ts-label">販売目標達成率</div>
-        <div class="ts-bar"><div class="ts-fill" style="width:50%;background:var(--gradient-2)"></div></div>
-        <div class="ts-text">20 / 40</div>
-        <div class="ts-detail">50.0%</div>
-      </div>
-      <div class="ticket-table-wrap">
-        <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>販売期間</th><th>価格</th><th>販売数 / 枠</th><th>目標</th><th>達成率</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>一般販売</td><td><span class="ticket-type type-general">一般</span></td><td>3/29 - 4/25</td><td>&yen;4,000</td><td>8 / 40 <span class="diff-badge diff-up">+3</span></td>
-              <td rowspan="2" style="vertical-align:middle;text-align:center;font-weight:600;">40</td>
-              <td rowspan="2" style="vertical-align:middle;"><div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" style="width:50%;background:var(--gradient-2)"></div></div><span class="progress-text">50%</span></div></td>
-            </tr>
-            <tr><td>FC限定</td><td><span class="ticket-type type-fc">FC</span></td><td>3/29 - 4/25</td><td>&yen;3,000</td><td>12 / 30 <span class="diff-badge diff-up">+1</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="info-box">
-        売上: <strong style="color:var(--accent-green);">&yen;68,000</strong> | 残り15日で20枚追加が必要。FC限定は40%販売済み
-      </div>
-      <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-4"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-4"></canvas></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================ -->
-  <!-- Event 5: Another Live feat. 90's J-POP (NEW!) -->
-  <!-- ============================================ -->
-  <div class="event-section" id="event5" style="border-color: rgba(155,109,255,0.4);">
-    <div class="event-header">
-      <h2>Another Live feat. 90's J-POP <span class="diff-badge diff-new">NEW</span></h2>
-      <div class="event-meta">
-        <span class="event-badge badge-date">2026/5/22</span>
-        <span class="event-badge badge-venue">グラムシュタイン</span>
-        <span class="event-badge badge-onsale">販売中</span>
-        <span class="event-badge badge-new">新規追加</span>
-      </div>
-    </div>
-    <div class="event-body">
-      <div class="target-summary">
-        <div class="ts-label">販売目標達成率</div>
-        <div class="ts-bar"><div class="ts-fill" style="width:57.5%;background:var(--gradient-1)"></div></div>
-        <div class="ts-text">23 / 40</div>
-        <div class="ts-detail">57.5%</div>
-      </div>
-      <div class="ticket-table-wrap">
-        <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>販売期間</th><th>価格</th><th>販売数 / 枠</th><th>目標</th><th>達成率</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>FC限定</td><td><span class="ticket-type type-fc">FC</span></td><td>4/4 - 5/22</td><td>&yen;4,000</td><td>16 / 50</td>
-              <td rowspan="2" style="vertical-align:middle;text-align:center;font-weight:600;">40</td>
-              <td rowspan="2" style="vertical-align:middle;"><div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" style="width:57.5%;background:var(--gradient-1)"></div></div><span class="progress-text">57.5%</span></div></td>
-            </tr>
-            <tr><td>一般販売</td><td><span class="ticket-type type-general">一般</span></td><td>4/4 - 5/22</td><td>&yen;5,000</td><td>7 / 50</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="info-box">
-        売上: <strong style="color:var(--accent-green);">&yen;99,000</strong> | 発売6日で23枚（57.5%達成）。FC限定の勢いが強い（16/50枚=32%）。残り42日で目標まであと17枚
-      </div>
-      <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-5"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-5"></canvas></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================ -->
-  <!-- Event 6: Re:Flection -->
-  <!-- ============================================ -->
-  <div class="event-section" id="event6">
-    <div class="event-header">
-      <h2>Re:Flection <span class="diff-badge diff-up">+3枚</span></h2>
-      <div class="event-meta">
-        <span class="event-badge badge-date">2026/5/16</span>
+        <span class="event-badge badge-date">2026/5/16 昼・夜2公演</span>
         <span class="event-badge badge-venue">GRIT at Shibuya</span>
         <span class="event-badge badge-onsale">販売中</span>
       </div>
     </div>
     <div class="event-body">
+
       <div class="target-summary">
         <div class="ts-label">販売目標達成率</div>
-        <div class="ts-bar"><div class="ts-fill" style="width:22.3%;background:var(--gradient-1)"></div></div>
-        <div class="ts-text">78 / 350</div>
-        <div class="ts-detail">22.3% <span class="diff-badge diff-up">+0.9pt</span></div>
+        <div class="ts-bar">
+          <div class="ts-fill" style="width:20.3%;background:var(--gradient-1)"></div>
+        </div>
+        <div class="ts-text">71 / 350</div>
+        <div class="ts-detail">20.3%</div>
       </div>
+
       <div class="ticket-table-wrap">
         <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>期間</th><th>価格</th><th>販売数 / 枠</th><th>申込 / 当選 / 入金</th></tr></thead>
+          <thead>
+            <tr>
+              <th>チケット名</th>
+              <th>種別</th>
+              <th>抽選登録期間</th>
+              <th>販売期間</th>
+              <th>価格</th>
+              <th>販売数</th>
+              <th>目標</th>
+              <th>達成率</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td colspan="6" style="font-weight:600;color:var(--accent-orange);font-size:11px;padding:8px 14px;background:rgba(255,159,67,0.05);">抽選チケット（販売終了）</td></tr>
-            <tr><td>【昼】グッズ付Sエリア</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;15,000</td><td>25 / 50</td><td>28 / 28 / 25</td></tr>
-            <tr><td>【昼】Aエリア</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;7,500</td><td>14 / 300</td><td>15 / 15 / 14</td></tr>
-            <tr><td>【夜】グッズ付Sエリア</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;15,000</td><td>20 / 50</td><td>22 / 22 / 20</td></tr>
-            <tr><td>【夜】Aエリア</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;7,500</td><td>16 / 300</td><td>18 / 18 / 16</td></tr>
-            <tr><td colspan="6" style="font-weight:600;color:var(--accent-green);font-size:11px;padding:8px 14px;background:rgba(78,205,196,0.05);">一般販売チケット（4/6〜 販売中）<span class="diff-badge diff-new">NEW</span></td></tr>
-            <tr><td>【昼】グッズ付Sエリア</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 5/16</td><td>&yen;15,000</td><td>0 / 25</td><td>-</td></tr>
-            <tr><td>【昼】Aエリア</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 5/16</td><td>&yen;7,500</td><td>3 / 200 <span class="diff-badge diff-up">+3</span></td><td>-</td></tr>
-            <tr><td>【夜】グッズ付Sエリア</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 5/16</td><td>&yen;15,000</td><td>0 / 30</td><td>-</td></tr>
-            <tr><td>【夜】Aエリア</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 5/16</td><td>&yen;7,500</td><td>0 / 200</td><td>-</td></tr>
+            <tr>
+              <td>【昼】グッズ付Sエリア</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 -</td>
+              <td>&yen;15,000</td>
+              <td>23</td>
+              <td style="text-align:center;">50</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:46%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">46%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>【昼】Aエリア</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 -</td>
+              <td>&yen;7,500</td>
+              <td>14</td>
+              <td style="text-align:center;">125</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:11.2%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">11%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>【夜】グッズ付Sエリア</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 -</td>
+              <td>&yen;15,000</td>
+              <td>18</td>
+              <td style="text-align:center;">50</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:36%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">36%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>【夜】Aエリア</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 -</td>
+              <td>&yen;7,500</td>
+              <td>16</td>
+              <td style="text-align:center;">125</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:12.8%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">13%</span>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
+
       <div class="lottery-info">
-        <h4>&#x1F3B2; 抽選チケット集計（全4チケット合算）</h4>
-        <div class="lottery-grid">
-          <div class="lottery-item"><div class="li-label">申込枚数合計</div><div class="li-value">83</div><div class="li-sub">枚</div></div>
-          <div class="lottery-item"><div class="li-label">当選枚数合計</div><div class="li-value">83</div><div class="li-sub">枚（当選率100%）</div></div>
-          <div class="lottery-item"><div class="li-label">入金枚数合計</div><div class="li-value">75</div><div class="li-sub">枚</div></div>
-          <div class="lottery-item"><div class="li-label">入金率</div><div class="li-value">90.4%</div><div class="li-sub">全員当選・高入金率</div></div>
+        <h4>&#x1F3B2; 抽選チケット集計（最速先行抽選 全4種）</h4>
+        <div class="ticket-table-wrap" style="margin-top:12px">
+          <table class="ticket-table">
+            <thead>
+              <tr>
+                <th>チケット</th>
+                <th>申込人数</th>
+                <th>申込枚数</th>
+                <th>当選人数</th>
+                <th>当選枚数</th>
+                <th>落選</th>
+                <th>入金 (販売数)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>【昼】グッズ付S</td>
+                <td>27</td><td>28</td><td>27</td><td>28</td><td>0</td><td>23</td>
+              </tr>
+              <tr>
+                <td>【昼】A</td>
+                <td>14</td><td>15</td><td>14</td><td>15</td><td>0</td><td>14</td>
+              </tr>
+              <tr>
+                <td>【夜】グッズ付S</td>
+                <td>21</td><td>22</td><td>21</td><td>22</td><td>0</td><td>18</td>
+              </tr>
+              <tr>
+                <td>【夜】A</td>
+                <td>17</td><td>18</td><td>17</td><td>18</td><td>0</td><td>16</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lottery-grid" style="margin-top:16px">
+          <div class="lottery-item">
+            <div class="li-label">総申込枚数</div>
+            <div class="li-value">83</div>
+            <div class="li-sub">枚</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">総当選枚数</div>
+            <div class="li-value">83</div>
+            <div class="li-sub">枚</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">入金済 (販売数)</div>
+            <div class="li-value">71</div>
+            <div class="li-sub">枚（入金率 85.5%）</div>
+          </div>
         </div>
       </div>
-      <div class="info-box">
-        売上: <strong style="color:var(--accent-green);">&yen;924,500</strong> | 一般販売が4/6に開始。開始4日で昼Aエリア3枚が動いた。5/16開催まで残り36日
-      </div>
+
       <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-6"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-6"></canvas></div></div>
+        <div class="chart-card">
+          <h4>日別販売数推移</h4>
+          <div class="chart-container"><canvas id="chart-sales-4"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>日別閲覧数推移</h4>
+          <div class="chart-container"><canvas id="chart-views-4"></canvas></div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ============================================ -->
-  <!-- Event 7: RE:DO -->
+  <!-- Event 5: RE:DO -GENESIS-/-EVOLVE- -->
   <!-- ============================================ -->
-  <div class="event-section" id="event7">
+  <div class="event-section" id="event5">
     <div class="event-header">
-      <h2>RE:DO <span class="diff-badge diff-up">+5枚</span></h2>
+      <h2>LiveRevolt Re:venge 1st Live「RE:DO」-GENESIS- / -EVOLVE-</h2>
       <div class="event-meta">
-        <span class="event-badge badge-date">2026/6/13</span>
+        <span class="event-badge badge-date">2026/6/13 表・裏2公演</span>
         <span class="event-badge badge-venue">GRIT at Shibuya</span>
         <span class="event-badge badge-onsale">販売中</span>
       </div>
     </div>
     <div class="event-body">
+
       <div class="target-summary">
         <div class="ts-label">販売目標達成率</div>
-        <div class="ts-bar"><div class="ts-fill" style="width:20.6%;background:var(--gradient-1)"></div></div>
-        <div class="ts-text">72 / 350</div>
-        <div class="ts-detail">20.6% <span class="diff-badge diff-up">+1.5pt</span></div>
+        <div class="ts-bar">
+          <div class="ts-fill" style="width:18%;background:var(--gradient-1)"></div>
+        </div>
+        <div class="ts-text">63 / 350</div>
+        <div class="ts-detail">18.0%</div>
       </div>
+
       <div class="ticket-table-wrap">
         <table class="ticket-table">
-          <thead><tr><th>チケット名</th><th>種別</th><th>期間</th><th>価格</th><th>販売数 / 枠</th><th>申込 / 当選 / 入金</th></tr></thead>
+          <thead>
+            <tr>
+              <th>チケット名</th>
+              <th>種別</th>
+              <th>抽選登録期間</th>
+              <th>販売期間</th>
+              <th>価格</th>
+              <th>販売数</th>
+              <th>目標</th>
+              <th>達成率</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td colspan="6" style="font-weight:600;color:var(--accent-orange);font-size:11px;padding:8px 14px;background:rgba(255,159,67,0.05);">抽選チケット（販売終了）</td></tr>
-            <tr><td>【表】S GENESIS</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;13,000</td><td>24 / 50 <span class="diff-badge diff-up">+2</span></td><td>30 / 30 / 24</td></tr>
-            <tr><td>【表】A</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;6,500</td><td>11 / 300</td><td>12 / 12 / 11</td></tr>
-            <tr><td>【裏】S EVOLVE</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;13,000</td><td>28 / 50 <span class="diff-badge diff-up">+2</span></td><td>34 / 34 / 28</td></tr>
-            <tr><td>【裏】A</td><td><span class="ticket-type type-lottery">抽選</span></td><td>3/24 - 4/5</td><td>&yen;6,500</td><td>8 / 300</td><td>9 / 9 / 8</td></tr>
-            <tr><td colspan="6" style="font-weight:600;color:var(--accent-green);font-size:11px;padding:8px 14px;background:rgba(78,205,196,0.05);">一般販売チケット（4/6〜 販売中）<span class="diff-badge diff-new">NEW</span></td></tr>
-            <tr><td>【表】S GENESIS</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 6/13</td><td>&yen;13,000</td><td>0 / 26</td><td>-</td></tr>
-            <tr><td>【表】A</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 6/13</td><td>&yen;6,500</td><td>1 / 200 <span class="diff-badge diff-up">+1</span></td><td>-</td></tr>
-            <tr><td>【裏】S EVOLVE</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 6/13</td><td>&yen;13,000</td><td>0 / 22</td><td>-</td></tr>
-            <tr><td>【裏】A</td><td><span class="ticket-type type-general">一般</span></td><td>4/6 - 6/13</td><td>&yen;6,500</td><td>0 / 200</td><td>-</td></tr>
+            <tr>
+              <td>【表】グッズ付S GENESIS</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 - 4/5</td>
+              <td>&yen;13,000</td>
+              <td>21</td>
+              <td style="text-align:center;">50</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:42%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">42%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>【表】A GENESIS</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 - 4/5</td>
+              <td>&yen;6,500</td>
+              <td>11</td>
+              <td style="text-align:center;">125</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:8.8%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">9%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>【裏】グッズ付S EVOLVE</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 - 4/5</td>
+              <td>&yen;13,000</td>
+              <td>23</td>
+              <td style="text-align:center;">50</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:46%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">46%</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>【裏】A EVOLVE</td>
+              <td><span class="ticket-type type-lottery">抽選</span></td>
+              <td>3/7 - 3/22</td>
+              <td>3/24 - 4/5</td>
+              <td>&yen;6,500</td>
+              <td>8</td>
+              <td style="text-align:center;">125</td>
+              <td>
+                <div class="progress-wrap">
+                  <div class="progress-bar"><div class="progress-fill" style="width:6.4%;background:var(--gradient-1)"></div></div>
+                  <span class="progress-text">6%</span>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
+
       <div class="lottery-info">
-        <h4>&#x1F3B2; 抽選チケット集計（全4チケット合算）</h4>
-        <div class="lottery-grid">
-          <div class="lottery-item"><div class="li-label">申込枚数合計</div><div class="li-value">85</div><div class="li-sub">枚</div></div>
-          <div class="lottery-item"><div class="li-label">当選枚数合計</div><div class="li-value">85</div><div class="li-sub">枚（当選率100%）</div></div>
-          <div class="lottery-item"><div class="li-label">入金枚数合計</div><div class="li-value">71</div><div class="li-sub">枚 <span class="diff-badge diff-up">+4</span></div></div>
-          <div class="lottery-item"><div class="li-label">入金率</div><div class="li-value">83.5%</div><div class="li-sub">前回 78.8%</div></div>
+        <h4>&#x1F3B2; 抽選チケット集計（最速先行抽選 全4種）</h4>
+        <div class="ticket-table-wrap" style="margin-top:12px">
+          <table class="ticket-table">
+            <thead>
+              <tr>
+                <th>チケット</th>
+                <th>申込人数</th>
+                <th>申込枚数</th>
+                <th>当選人数</th>
+                <th>当選枚数</th>
+                <th>落選</th>
+                <th>入金 (販売数)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>【表】グッズ付S GENESIS</td>
+                <td>30</td><td>30</td><td>30</td><td>30</td><td>0</td><td>21</td>
+              </tr>
+              <tr>
+                <td>【表】A GENESIS</td>
+                <td>12</td><td>12</td><td>12</td><td>12</td><td>0</td><td>11</td>
+              </tr>
+              <tr>
+                <td>【裏】グッズ付S EVOLVE</td>
+                <td>34</td><td>34</td><td>34</td><td>34</td><td>0</td><td>23</td>
+              </tr>
+              <tr>
+                <td>【裏】A EVOLVE</td>
+                <td>9</td><td>9</td><td>9</td><td>9</td><td>0</td><td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="lottery-grid" style="margin-top:16px">
+          <div class="lottery-item">
+            <div class="li-label">総申込枚数</div>
+            <div class="li-value">85</div>
+            <div class="li-sub">枚</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">総当選枚数</div>
+            <div class="li-value">85</div>
+            <div class="li-sub">枚</div>
+          </div>
+          <div class="lottery-item">
+            <div class="li-label">入金済 (販売数)</div>
+            <div class="li-value">63</div>
+            <div class="li-sub">枚（入金率 74.1%）</div>
+          </div>
         </div>
       </div>
-      <div class="info-box">
-        売上: <strong style="color:var(--accent-green);">&yen;806,000</strong> | 一般販売が4/6に開始。表Aエリア1枚が動いた。6/13開催まで残り64日。入金率も着実に改善中
-      </div>
+
       <div class="chart-row">
-        <div class="chart-card"><h4>日別販売数推移</h4><div class="chart-container"><canvas id="chart-sales-7"></canvas></div></div>
-        <div class="chart-card"><h4>日別閲覧数推移</h4><div class="chart-container"><canvas id="chart-views-7"></canvas></div></div>
+        <div class="chart-card">
+          <h4>日別販売数推移</h4>
+          <div class="chart-container"><canvas id="chart-sales-5"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h4>日別閲覧数推移</h4>
+          <div class="chart-container"><canvas id="chart-views-5"></canvas></div>
+        </div>
       </div>
     </div>
   </div>
@@ -628,50 +1048,123 @@
   <!-- ============================================ -->
   <!-- Analysis & Recommendations -->
   <!-- ============================================ -->
-  <div class="analysis-section">
-    <div class="analysis-header">
-      <h2>Analysis & Recommendations</h2>
+  <div class="event-section" id="analysis">
+    <div class="event-header" style="border-bottom:none;">
+      <h2 style="background:var(--gradient-2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:22px;">Analysis & Recommendations</h2>
+      <div class="event-meta">
+        <span class="event-badge" style="background:rgba(255,107,157,0.15);color:#ff6b9d;border:1px solid rgba(255,107,157,0.3);">AI Analysis</span>
+        <span class="event-badge badge-date">2026/03/27</span>
+      </div>
     </div>
-    <div class="analysis-body">
+    <div class="event-body">
 
-      <div class="analysis-block ab-diff">
-        <h3>前回（4/2）からの変動サマリー</h3>
-        <p>
-          8日間で+51枚の積み上げ（241→292枚）。最大の成長はSCARLET LUMiNOUS（+16枚、10→26枚）で、目標20枚を大幅に突破し本日開催を迎えた。新規イベント「Another Live feat. 90's J-POP」が追加され、発売6日で23枚と好調な初動。Re:Flection/RE:DOは抽選販売が終了し一般販売フェーズに移行、それぞれ+3枚、+5枚の積み増し。目標達成イベントが1→3に倍増（Another Live、SCARLET LUMiNOUS、※Beginning of the worldsは92.5%で未達だが販売終了）。
+      <!-- Overall Assessment -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:28px;">
+        <h3 style="font-size:15px;color:var(--accent-pink);margin-bottom:16px;font-weight:600;">全体所感</h3>
+        <p style="font-size:13px;color:var(--text-primary);line-height:1.9;margin-bottom:16px;">
+          全5イベントの総販売数は181枚、目標792枚に対して達成率22.9%。
+          現時点で目標を達成しているのはAnother Live feat. swing music（112.5%）のみですが、
+          Beginning of the worldsは明日が本番で85%まで到達しており、当日券の動きを踏まえれば達成圏内です。
+        </p>
+        <p style="font-size:13px;color:var(--text-primary);line-height:1.9;margin-bottom:16px;">
+          一方、Re:FlectionとRE:DOの2公演は目標350枚に対してそれぞれ71枚（20.3%）、63枚（18.0%）と低調です。
+          ただし、どちらも抽選先行の入金フェーズが終了したばかりで、一般販売はこれから本格化する段階です。
+          現在の数字だけで判断するのは時期尚早ですが、Aエリア（各125枚目標）の販売ペースは特に注視が必要です。
+        </p>
+        <p style="font-size:13px;color:var(--text-primary);line-height:1.9;">
+          SCARLET LUMiNOUSは販売開始から約1週間で10/20枚（50%）。残り2週間で10枚の上積みが必要ですが、
+          直近の日別販売はペースダウン傾向にあり、追加の告知施策を検討すべきタイミングです。
         </p>
       </div>
 
-      <div class="analysis-block ab-overview">
-        <h3>全体概況</h3>
-        <p>
-          全7イベントの総販売数292枚、総売上約¥2,895,500。目標設定済み7イベントの合計達成率33.5%（前回28.4%から+5.1pt改善）。小〜中規模イベント（Another Live swing / SCARLET / 90's J-POP）はいずれも好調で、ファンベースの手堅い支持が確認できる。一方、大型公演（Re:Flection 350枠 / RE:DO 350枠）は一般販売に移行したものの、まだ動きが緩やか。
-        </p>
+      <!-- Key Insights -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:28px;">
+        <h3 style="font-size:15px;color:var(--accent-blue);margin-bottom:20px;font-weight:600;">注目ポイント</h3>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div style="padding:20px;background:rgba(78,140,255,0.05);border-radius:12px;border-left:3px solid var(--accent-blue);">
+            <div style="font-size:12px;color:var(--accent-blue);font-weight:600;margin-bottom:8px;">抽選の入金率に差がある</div>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+              Re:Flection 85.5% vs RE:DO 74.1%。RE:DOの方が入金率が約11pt低く、
+              特に【表】グッズ付S GENESIS（30当選→21入金＝70%）と【裏】グッズ付S EVOLVE（34当選→23入金＝67.6%）の
+              Sエリアで未入金が目立ちます。価格帯（¥13,000〜¥15,000）の影響が考えられます。
+            </p>
+          </div>
+          <div style="padding:20px;background:rgba(78,205,196,0.05);border-radius:12px;border-left:3px solid var(--accent-green);">
+            <div style="font-size:12px;color:var(--accent-green);font-weight:600;margin-bottom:8px;">swing musicの瞬間完売力</div>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+              Another Liveは販売開始日（3/11）に全36枚が即日完売。
+              閲覧数もその日がピーク（116PV）で、告知→即購入の導線が極めてスムーズでした。
+              FC専用枠と一般枠の比率（20:16）もバランスが良く、今後のイベント設計の参考になります。
+            </p>
+          </div>
+          <div style="padding:20px;background:rgba(255,159,67,0.05);border-radius:12px;border-left:3px solid var(--accent-orange);">
+            <div style="font-size:12px;color:var(--accent-orange);font-weight:600;margin-bottom:8px;">閲覧→購入のCVRに課題</div>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+              Re:Flectionは総閲覧数671PVに対して販売71枚（CVR 10.6%）。
+              RE:DOは総閲覧数321PVに対して63枚（CVR 19.6%）。
+              Re:Flectionの方が集客力は高いものの、購入に至る転換率ではRE:DOが上回っています。
+              ページ閲覧後の離脱要因（価格・情報不足・購入導線）を検証する余地があります。
+            </p>
+          </div>
+          <div style="padding:20px;background:rgba(155,109,255,0.05);border-radius:12px;border-left:3px solid var(--accent-purple);">
+            <div style="font-size:12px;color:var(--accent-purple);font-weight:600;margin-bottom:8px;">抽選の倍率がすべて1.0倍</div>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+              全抽選チケットで落選者が0人。申込=当選の状態は、
+              抽選を設けるメリット（プレミア感・需要の可視化）が薄れています。
+              次回以降、先行枠数を絞る or 一般販売に一本化して販売期間を長く取る選択肢も検討に値します。
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="analysis-block ab-highlight">
-        <h3>ポジティブ要因</h3>
-        <p>
-          <strong>SCARLET LUMiNOUS</strong>が目標130%達成。4/3以降の一般販売追加プッシュが効いており、6枚→5枚→1枚と連日売れたタイミングがある。FC限定も10/15枚と66.7%が埋まった。<br><br>
-          <strong>90's J-POP</strong>は発売初日に21枚が動く爆発的な初動。FC限定16/50枚（32%）、一般7/50枚（14%）と、FC層が牽引。Another Liveシリーズの集客力の高さが証明されている。<br><br>
-          <strong>RE:DO</strong>の入金率が78.8%→83.5%に改善。S GENESISは24/30入金（80%）、S EVOLVEは28/34入金（82.4%）とSエリアの入金率が高く、高単価チケットの需要が堅い。
-        </p>
+      <!-- Action Plan -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:28px;">
+        <h3 style="font-size:15px;color:var(--accent-green);margin-bottom:20px;font-weight:600;">今後のアクション指針</h3>
+
+        <div style="margin-bottom:20px;padding:16px 20px;background:var(--bg-secondary);border-radius:10px;border-left:3px solid var(--accent-red);">
+          <div style="font-size:12px;color:var(--accent-red);font-weight:600;margin-bottom:6px;">緊急 — SCARLET LUMiNOUS（残り14日）</div>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+            目標20枚に対して現在10枚。残り10枚の販売が必要。直近は1日0〜1枚ペースに落ちており、
+            このまま放置すると目標未達の可能性が高い。KASUMiのSNS告知強化、FC向けリマインド配信、
+            出演者によるストーリーズ告知など、即効性のある施策を今週中に実施すべき。
+          </p>
+        </div>
+
+        <div style="margin-bottom:20px;padding:16px 20px;background:var(--bg-secondary);border-radius:10px;border-left:3px solid var(--accent-orange);">
+          <div style="font-size:12px;color:var(--accent-orange);font-weight:600;margin-bottom:6px;">重要 — Re:Flection & RE:DO のAエリア販促</div>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+            両公演ともAエリアの達成率が5〜13%と極めて低い状態。枠数（各300枚）に対して目標125枚は妥当ですが、
+            一般販売フェーズで巻き返しが必要。4月中旬〜GW前のタイミングでSNSキャンペーン、
+            セットリスト情報の段階公開、出演者コメント動画など、購入動機を刺激するコンテンツを計画的に投下する。
+          </p>
+        </div>
+
+        <div style="margin-bottom:20px;padding:16px 20px;background:var(--bg-secondary);border-radius:10px;border-left:3px solid var(--accent-blue);">
+          <div style="font-size:12px;color:var(--accent-blue);font-weight:600;margin-bottom:6px;">検討 — 抽選制度の見直し</div>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+            先行抽選で全員当選している現状は、ユーザーに「抽選で獲れた」という体験価値を提供できていない。
+            先行枠をキャパの30〜50%程度に絞り、残りを一般販売に回すことで、
+            先行の希少性向上と一般販売期間の長期化（＝露出増加）の両方を実現できる可能性がある。
+          </p>
+        </div>
+
+        <div style="padding:16px 20px;background:var(--bg-secondary);border-radius:10px;border-left:3px solid var(--accent-green);">
+          <div style="font-size:12px;color:var(--accent-green);font-weight:600;margin-bottom:6px;">継続 — swing music型の成功パターンの横展開</div>
+          <p style="font-size:12px;color:var(--text-secondary);line-height:1.8;">
+            FC枠と一般枠を適切に分けつつ、告知→即販売の導線を最短化。
+            初日にまとまった数を売り切る「初動型」の販売設計は、SNSでの口コミ拡散にもつながりやすい。
+            次回のMonthly Eventや小規模公演では、このモデルを意識した設計を推奨。
+          </p>
+        </div>
       </div>
 
-      <div class="analysis-block ab-concern">
-        <h3>注意すべきポイント</h3>
-        <p>
-          <strong>Re:Flection / RE:DO の一般販売が低調。</strong>4/6開始から4日で、Re:Flectionは昼Aエリア3枚のみ、RE:DOは表Aエリア1枚のみ。Sエリア（¥15,000 / ¥13,000）は一般販売で動いておらず、Aエリア（¥7,500 / ¥6,500）でもわずか。一般販売フェーズの認知が行き届いていない可能性。<br><br>
-          <strong>EZ GAME</strong>は残り15日で20枚が必要。FC限定12/30枚（40%）は健闘しているが、一般8/40枚（20%）が伸び悩み。閲覧数も4/3の11をピークに減少傾向。
-        </p>
-      </div>
-
-      <div class="analysis-block ab-action">
-        <h3>推奨アクション</h3>
-        <p>
-          <strong>Re:Flection / RE:DO:</strong> 「一般販売開始」の告知をSNS・FC通知で再度実施。特にAエリア¥7,500 / ¥6,500の価格メリットを強調。出演者からの告知ポストが閲覧数に直結しており（3/22の74PVは告知と連動）、定期的な出演者投稿を推奨。<br><br>
-          <strong>EZ GAME:</strong> 残り15日。SCARLETが4/3以降に急伸した事例を参考に、イベント2週間前のリマインド告知が効果的。一般販売の露出強化と、FC会員向けの友人招待施策を実施。<br><br>
-          <strong>90's J-POP:</strong> 初動の好調さを維持するため、週1回のSNS告知を継続。残り17枚は十分達成圏内。一般販売（¥5,000）がFC（¥4,000）より高い設定のため、早期購入メリットの訴求が有効。<br><br>
-          <strong>SCARLET LUMiNOUS:</strong> 本日開催おめでとうございます！当日券販売の準備と、イベント後のレポートで次回施策へのフィードバック収集を推奨。目標130%達成は大きな成功。
+      <!-- Disclaimer -->
+      <div style="padding:16px 24px;border-radius:10px;background:rgba(96,96,128,0.1);border:1px solid rgba(96,96,128,0.2);">
+        <p style="font-size:11px;color:var(--text-muted);line-height:1.7;">
+          ※ 本分析はZAIKO管理画面から取得した2026/03/27時点のデータに基づくAIによる考察です。
+          実際の施策決定にあたっては、SNSのエンゲージメントデータや過去イベントとの比較、
+          出演者側の意向なども含めて総合的にご判断ください。
         </p>
       </div>
 
@@ -679,7 +1172,7 @@
   </div>
 
   <div class="footer">
-    Generated by ZAIKO Sales Analytics | UnknownRecords | 2026/04/10
+    Generated from ZAIKO Creator Dashboard &middot; UnknownRecords &middot; 2026/03/27
   </div>
 
 </div>
@@ -690,71 +1183,105 @@ Chart.defaults.borderColor = 'rgba(42,42,64,0.5)';
 Chart.defaults.font.family = "'Inter', 'Noto Sans JP', sans-serif";
 Chart.defaults.font.size = 11;
 
-const chartOpts = (maxY) => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      backgroundColor: '#1a1a28', borderColor: '#3a3a5c', borderWidth: 1,
-      titleColor: '#e8e8f0', bodyColor: '#9090b0', padding: 10, cornerRadius: 8
-    }
-  },
-  scales: {
-    x: { grid: { display: false }, ticks: { maxRotation: 45, font: { size: 9 } } },
-    y: { beginAtZero: true, suggestedMax: maxY, grid: { color: 'rgba(42,42,64,0.3)' } }
-  }
-});
+function createChart(canvasId, labels, data, color, gradientTop, gradientBottom, label) {
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  const gradient = ctx.createLinearGradient(0, 0, 0, 220);
+  gradient.addColorStop(0, gradientTop);
+  gradient.addColorStop(1, gradientBottom);
 
-function makeChart(id, labels, data, color, maxY) {
-  new Chart(document.getElementById(id), {
-    type: 'bar',
-    data: { labels, datasets: [{ data, backgroundColor: color + '66', borderColor: color, borderWidth: 1, borderRadius: 3, barPercentage: 0.8 }] },
-    options: chartOpts(maxY)
-  });
-}
-function makeLineChart(id, labels, data, color, maxY) {
-  new Chart(document.getElementById(id), {
+  new Chart(ctx, {
     type: 'line',
-    data: { labels, datasets: [{ data, borderColor: color, backgroundColor: color + '1a', fill: true, tension: 0.3, pointRadius: 1.5, pointHoverRadius: 4, borderWidth: 2 }] },
-    options: chartOpts(maxY)
+    data: {
+      labels: labels,
+      datasets: [{
+        label: label,
+        data: data,
+        borderColor: color,
+        backgroundColor: gradient,
+        borderWidth: 2,
+        fill: true,
+        tension: 0.3,
+        pointRadius: data.length > 20 ? 0 : 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: color,
+        pointBorderColor: '#1a1a28',
+        pointBorderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a28',
+          borderColor: 'rgba(78,140,255,0.3)',
+          borderWidth: 1,
+          titleColor: '#e8e8f0',
+          bodyColor: '#9090b0',
+          padding: 12,
+          cornerRadius: 8,
+          displayColors: false
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            maxRotation: 45,
+            maxTicksLimit: 10,
+            callback: function(val, index) {
+              const l = this.getLabelForValue(val);
+              return l.substring(5);
+            }
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(42,42,64,0.3)' },
+          ticks: { precision: 0 }
+        }
+      }
+    }
   });
 }
 
-// Event 1: Beginning of the worlds (38 days)
-const l1 = ['2/18','2/19','2/20','2/21','2/22','2/23','2/24','2/25','2/26','2/27','2/28','3/1','3/2','3/3','3/4','3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24','3/25','3/26','3/27'];
-makeChart('chart-sales-1', l1, [0,0,0,0,0,0,0,0,0,0,0,21,3,0,0,2,0,0,0,0,2,0,1,0,0,0,0,0,1,0,0,2,0,0,0,1,2,2], '#4ecdc4', 25);
-makeLineChart('chart-views-1', l1, [78,96,20,7,3,11,4,4,9,24,37,38,16,9,7,6,6,9,18,23,52,11,7,6,3,6,7,7,4,3,10,10,2,56,17,42,62,95], '#4e8cff', 100);
+// Event 1
+const labels1 = ["2026-02-18","2026-02-19","2026-02-20","2026-02-21","2026-02-22","2026-02-23","2026-02-24","2026-02-26","2026-02-27","2026-02-28","2026-03-01","2026-03-02","2026-03-03","2026-03-04","2026-03-05","2026-03-06","2026-03-07","2026-03-08","2026-03-09","2026-03-10","2026-03-11","2026-03-12","2026-03-13","2026-03-14","2026-03-15","2026-03-16","2026-03-17","2026-03-18","2026-03-19","2026-03-20","2026-03-21","2026-03-22","2026-03-23","2026-03-24","2026-03-25","2026-03-26","2026-03-27"];
+const sales1 = [0,0,0,0,0,0,0,0,0,0,0,21,3,0,0,2,0,0,0,0,2,0,1,0,0,0,0,0,1,0,0,2,0,0,0,1,1];
+const views1 = [78,96,20,7,3,11,4,4,9,24,37,38,16,9,7,6,6,9,18,23,52,11,7,6,3,6,7,7,4,3,10,10,2,56,17,42,22];
+createChart('chart-sales-1', labels1, sales1, '#4e8cff', 'rgba(78,140,255,0.3)', 'rgba(78,140,255,0)', '販売数');
+createChart('chart-views-1', labels1, views1, '#9b6dff', 'rgba(155,109,255,0.3)', 'rgba(155,109,255,0)', '閲覧数');
 
-// Event 2: Another Live swing (25 days)
-const l2 = ['3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24','3/25','3/26','3/27','3/28','3/29','3/30','3/31','4/1','4/2'];
-makeChart('chart-sales-2', l2, [0,0,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], '#ff6b9d', 40);
-makeLineChart('chart-views-2', l2, [1,115,116,19,8,8,3,4,3,4,1,2,3,16,5,6,2,4,6,7,7,6,6,10,2], '#9b6dff', 120);
+// Event 2
+const labels2 = ["2026-03-09","2026-03-10","2026-03-11","2026-03-12","2026-03-13","2026-03-14","2026-03-15","2026-03-16","2026-03-17","2026-03-18","2026-03-19","2026-03-20","2026-03-21","2026-03-22","2026-03-23","2026-03-24","2026-03-25","2026-03-26","2026-03-27"];
+const sales2 = [0,0,36,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+const views2 = [1,115,116,19,8,8,3,4,3,4,1,2,3,16,5,6,2,4,5];
+createChart('chart-sales-2', labels2, sales2, '#ff6b9d', 'rgba(255,107,157,0.3)', 'rgba(255,107,157,0)', '販売数');
+createChart('chart-views-2', labels2, views2, '#ff9f43', 'rgba(255,159,67,0.3)', 'rgba(255,159,67,0)', '閲覧数');
 
-// Event 3: SCARLET LUMiNOUS (21 points)
-const l3 = ['3/18','3/19','3/20','3/21','3/22','3/24','3/26','3/27','3/28','3/29','3/30','4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9','4/10'];
-makeChart('chart-sales-3', l3, [0,7,1,0,1,0,1,0,0,0,0,0,0,6,0,2,5,1,1,0,1], '#ff9f43', 10);
-makeLineChart('chart-views-3', l3, [38,25,6,7,3,4,5,4,6,5,1,3,3,43,20,19,17,7,7,23,1], '#ff6b9d', 50);
+// Event 3
+const labels3 = ["2026-03-18","2026-03-19","2026-03-20","2026-03-21","2026-03-22","2026-03-24","2026-03-26","2026-03-27"];
+const sales3 = [0,7,1,0,1,0,1,0];
+const views3 = [38,25,6,7,3,4,5,4];
+createChart('chart-sales-3', labels3, sales3, '#4ecdc4', 'rgba(78,205,196,0.3)', 'rgba(78,205,196,0)', '販売数');
+createChart('chart-views-3', labels3, views3, '#44b09e', 'rgba(68,176,158,0.3)', 'rgba(68,176,158,0)', '閲覧数');
 
-// Event 4: EZ GAME (16 days)
-const l4 = ['3/26','3/27','3/28','3/29','3/30','3/31','4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9','4/10'];
-makeChart('chart-sales-4', l4, [0,0,0,16,0,0,0,0,2,0,0,0,1,0,1,0], '#9b6dff', 20);
-makeLineChart('chart-views-4', l4, [1,1,42,57,7,7,6,8,11,12,3,4,6,1,7,1], '#c4a0ff', 60);
+// Event 4
+const labels4 = ["2026-03-05","2026-03-06","2026-03-07","2026-03-08","2026-03-09","2026-03-10","2026-03-11","2026-03-12","2026-03-13","2026-03-14","2026-03-15","2026-03-16","2026-03-17","2026-03-18","2026-03-19","2026-03-20","2026-03-21","2026-03-22","2026-03-23","2026-03-24","2026-03-25","2026-03-26","2026-03-27"];
+const sales4 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,71,0,0,0];
+const views4 = [1,1,137,83,72,24,27,10,19,13,16,8,34,26,25,23,30,74,19,17,6,3,2];
+createChart('chart-sales-4', labels4, sales4, '#4e8cff', 'rgba(78,140,255,0.3)', 'rgba(78,140,255,0)', '販売数');
+createChart('chart-views-4', labels4, views4, '#9b6dff', 'rgba(155,109,255,0.3)', 'rgba(155,109,255,0)', '閲覧数');
 
-// Event 5: 90's J-POP (NEW - 9 days)
-const l5 = ['4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9','4/10'];
-makeChart('chart-sales-5', l5, [0,0,21,0,1,0,1,0,0], '#4ecdc4', 25);
-makeLineChart('chart-views-5', l5, [3,42,58,9,8,2,3,2,1], '#4e8cff', 60);
-
-// Event 6: Re:Flection (36 days)
-const l6 = ['3/5','3/6','3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24','3/25','3/26','3/27','3/28','3/29','3/30','3/31','4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9'];
-makeChart('chart-sales-6', l6, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,71,0,0,0,0,0,0,0,4,0,0,0,0,2,1,0,0], '#4ecdc4', 80);
-makeLineChart('chart-views-6', l6, [1,1,137,83,72,24,27,10,19,13,16,8,34,26,25,23,30,74,19,17,6,3,2,7,6,4,8,8,6,3,4,5,46,22,39,12], '#4e8cff', 140);
-
-// Event 7: RE:DO (33 days)
-const l7 = ['3/7','3/8','3/9','3/10','3/11','3/12','3/13','3/14','3/15','3/16','3/17','3/18','3/19','3/20','3/21','3/22','3/23','3/24','3/25','3/26','3/28','3/29','3/30','3/31','4/1','4/2','4/3','4/4','4/5','4/6','4/7','4/8','4/9'];
-makeChart('chart-sales-7', l7, [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,63,0,0,0,0,0,0,3,1,0,0,4,1,0,0,0], '#ff6b9d', 70);
-makeLineChart('chart-views-7', l7, [41,38,37,12,30,12,2,4,11,7,9,19,13,13,11,39,9,15,7,2,2,7,1,3,5,2,2,1,4,12,6,5,3], '#9b6dff', 45);
+// Event 5
+const labels5 = ["2026-03-07","2026-03-08","2026-03-09","2026-03-10","2026-03-11","2026-03-12","2026-03-13","2026-03-14","2026-03-15","2026-03-16","2026-03-17","2026-03-18","2026-03-19","2026-03-20","2026-03-21","2026-03-22","2026-03-23","2026-03-24","2026-03-25","2026-03-26"];
+const sales5 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,63,0,0];
+const views5 = [41,38,37,12,30,12,2,4,11,7,9,19,13,13,11,39,9,15,7,2];
+createChart('chart-sales-5', labels5, sales5, '#ff6b9d', 'rgba(255,107,157,0.3)', 'rgba(255,107,157,0)', '販売数');
+createChart('chart-views-5', labels5, views5, '#ff9f43', 'rgba(255,159,67,0.3)', 'rgba(255,159,67,0)', '閲覧数');
 </script>
+
 </body>
 </html>
